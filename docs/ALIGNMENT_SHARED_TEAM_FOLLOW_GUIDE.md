@@ -1,4 +1,4 @@
-# Mouse alignment — shared follow guide (simple version)
+# Mouse alignment — shared follow guide
 
 Purpose:
 - give the team the minimum they need to follow the alignment phase
