@@ -11,10 +11,10 @@ The cleanup decision is already made:
 - use the `fastp` outputs as the alignment inputs
 
 The alignment is being done in two places:
-- private first: `/home/pzg8794/mouse_qc_remediation/`
-- shared second: `/home/zebrafish/mouse/PRJNA1017789_parallel/`
+- canonical workspace: `/home/pzg8794/mouse_qc_remediation/`
+- shared workspace: `/home/zebrafish/mouse/PRJNA1017789_parallel/`
 
-The shared run is chained to start automatically after the private run finishes.
+The shared run is chained to start automatically after the canonical run finishes.
 
 ## What the team will get in the shared tree
 
@@ -53,9 +53,7 @@ Reason:
 
 ## How the shared run starts
 
-The shared run does **not** start by hand right now.
-
-It waits for this private completion flag:
+The shared run waits for this completion flag:
 - `/home/pzg8794/mouse_qc_remediation/alignment/star_grcm39_ensembl_all26_fastp/all26_fastp_alignment.completed`
 
 Once that file exists, the shared launcher will:
@@ -63,24 +61,7 @@ Once that file exists, the shared launcher will:
 2. write the shared metadata files
 3. start the shared STAR alignment
 
-## What not to ask before checking the paths above
-
-- where are the cleaned files?
-- where is the reference?
-- where is the STAR index?
-- where are the logs?
-- where are the alignment outputs?
-
-All of those are answered in this file.
-
-## What not to do
-
-- do not build another mouse index in a random directory
-- do not point STAR at old FASTX outputs
-- do not rename files in `fastp_out/`
-- do not start a second shared alignment manually unless we decide to replace the current one
-
-## If you only need the practical status
+## Current status
 
 Current status:
 - `fastp` is the chosen cleanup stage
