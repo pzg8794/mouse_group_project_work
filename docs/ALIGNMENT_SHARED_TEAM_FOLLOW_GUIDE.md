@@ -104,6 +104,55 @@ That top-level script handles the same core pieces we used before:
 - sample-level STAR alignment
 - organized output/log writing
 
+## Direct STAR commands
+
+These are the command-level equivalents of the Trampnell assignment steps.
+
+### Step 1 — build the STAR index
+
+This is the same idea as the Trapnell assignment command:
+
+```bash
+/usr/local/bin/STAR/STAR \
+  --runMode genomeGenerate \
+  --runThreadN 12 \
+  --genomeDir /home/pzg8794/mouse_qc_remediation/reference/grcm39_ensembl/star_index_sjdb150 \
+  --genomeFastaFiles /home/pzg8794/mouse_qc_remediation/reference/grcm39_ensembl/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa \
+  --sjdbGTFfile /home/pzg8794/mouse_qc_remediation/reference/grcm39_ensembl/gtf/Mus_musculus.GRCm39.115.gtf \
+  --sjdbOverhang 150 \
+  --limitGenomeGenerateRAM 48000000000
+```
+
+### Step 2 — align one paired-end sample
+
+This is the same idea as the Trapnell assignment alignment command:
+
+```bash
+/usr/local/bin/STAR/STAR \
+  --runThreadN 4 \
+  --genomeDir /home/pzg8794/mouse_qc_remediation/reference/grcm39_ensembl/star_index_sjdb150 \
+  --readFilesIn \
+    /home/pzg8794/mouse_qc_remediation/output/fastp/out/SRR30333743_1.fastp.fastq.gz \
+    /home/pzg8794/mouse_qc_remediation/output/fastp/out/SRR30333743_2.fastp.fastq.gz \
+  --readFilesCommand zcat \
+  --twopassMode Basic \
+  --quantMode GeneCounts \
+  --outSAMtype BAM SortedByCoordinate \
+  --outFileNamePrefix /home/pzg8794/mouse_qc_remediation/alignment/star_grcm39_ensembl_all26_fastp/samples/SRR30333743/SRR30333743. \
+  --outTmpDir /home/pzg8794/mouse_qc_remediation/alignment/star_grcm39_ensembl_all26_fastp/samples/SRR30333743/_star_tmp
+```
+
+### What changed from the assignment version
+
+The command structure is the same. The practical adjustments are:
+- mouse reference instead of the class example reference
+- cleaned `fastp` inputs instead of raw reads
+- sorted BAM output
+- `GeneCounts` output turned on
+- organized per-sample output folders
+
+So the command pattern is still the Trampnell-style STAR workflow. It is just adapted to the mouse project paths.
+
 ## What STAR is doing underneath
 
 At the per-sample level, STAR is reading:
