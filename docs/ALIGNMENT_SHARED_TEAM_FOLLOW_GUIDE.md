@@ -108,6 +108,33 @@ That top-level script handles the same core pieces we used before:
 
 These are the command-level equivalents of the Trampnell assignment steps.
 
+## Trapnell assignment equivalence
+
+The assignment structure was:
+- build the STAR index
+- align the reads with STAR
+
+Our mouse pipeline uses the same two STAR stages.
+
+### Assignment step → mouse equivalent
+
+- Trapnell assignment:
+  - `STAR --runMode genomeGenerate ...`
+- Mouse pipeline equivalent:
+  - build the index with:
+    - `/usr/local/bin/STAR/STAR --runMode genomeGenerate ...`
+
+- Trapnell assignment:
+  - `STAR --genomeDir <index> --readFilesIn <reads> ...`
+- Mouse pipeline equivalent:
+  - align each mouse sample with:
+    - `/usr/local/bin/STAR/STAR --genomeDir /home/pzg8794/mouse_qc_remediation/reference/grcm39_ensembl/star_index_sjdb150 --readFilesIn ...`
+
+So when we say this follows the Trampnell-style analysis, the equivalence is direct:
+- same STAR index-building step
+- same STAR alignment step
+- different organism, reference files, cleaned inputs, and output locations
+
 ### Step 1 — build the STAR index
 
 This is the same idea as the Trapnell assignment command:
