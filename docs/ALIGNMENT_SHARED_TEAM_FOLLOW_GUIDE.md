@@ -12,12 +12,18 @@ The cleanup decision is already made:
 
 This is not a new workflow.
 
-It follows the same practical pipeline logic we already used in the Trampnell-style analysis:
+The pipeline theme is simple:
+- we first built the workflow around the Trampnell-style analysis
+- then we adjusted that same pipeline structure for the mouse dataset
+
+So for mouse, we are reusing the same core alignment logic:
 - choose the reference
 - build the STAR index
 - point STAR at the cleaned paired-end FASTQs
 - write sorted BAM outputs
 - collect the alignment logs and gene-count tables
+
+In other words, this is the Trampnell-style pipeline adapted to mouse, not a completely different alignment process.
 
 The alignment is being done in two places:
 - canonical workspace: `/home/pzg8794/mouse_qc_remediation/`
@@ -82,7 +88,7 @@ In simple terms, the pipeline does the same steps as the Trampnell analysis, jus
 6. write the STAR logs and gene-count tables
 7. keep all outputs in one organized alignment folder
 
-So the technical flow is not new. The only difference is the dataset and the exact file paths.
+So the technical flow is not new. The main changes are the mouse reference, the mouse cleaned-input files, and the output paths.
 
 ## Main launcher command
 
