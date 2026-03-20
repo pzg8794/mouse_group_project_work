@@ -21,7 +21,7 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 - shared wrapper:
   - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh`
 
-## Export section (this activates the environment)
+## Export section — activate the environment here
 
 Run this exactly after logging into `sequoia` to activate the team DESeq2 environment:
 
