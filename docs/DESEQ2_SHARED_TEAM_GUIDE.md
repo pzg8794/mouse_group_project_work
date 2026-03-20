@@ -21,7 +21,7 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 - shared wrapper:
   - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh`
 
-## Activate the environment
+## Export section
 
 Run this command exactly after logging into `sequoia`:
 
@@ -29,47 +29,15 @@ Run this command exactly after logging into `sequoia`:
 source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 ```
 
-If activation worked, this should print the R version without an error:
-
-```bash
-R --version | head -n 2
-```
-
-If you only want to test that `DESeq2` loads:
-
-```bash
-Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
-```
-
 ## Inputs expected
 
 - `mouse_star_gene_counts_reverse_stranded.tsv`
 - `mouse_alignment_sample_summary.tsv`
 
-## If the activation script fails
-
-```bash
-export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
-/home/pzg8794/.local/bin/micromamba run -n biol550_deseq2 \
-  Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
-```
-
-```bash
-bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh check
-```
-
-## Run the shared DESeq2 workflow
-
-### Preferred: activate first, then run
+## Run section
 
 ```bash
 source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
-bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
-```
-
-### One-command run without activation
-
-```bash
 bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
 ```
 
