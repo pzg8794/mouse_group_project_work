@@ -19,12 +19,46 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 - shared wrapper:
   - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh`
 
+## Activate the environment
+
+Run these commands exactly after logging into `sequoia`:
+
+```bash
+export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
+eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
+micromamba activate biol550_deseq2
+```
+
+If activation worked, this should print the R version without an error:
+
+```bash
+R --version | head -n 2
+```
+
+If you only want to test that `DESeq2` loads:
+
+```bash
+Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
+```
+
 ## Inputs expected
 
 - `mouse_star_gene_counts_reverse_stranded.tsv`
 - `mouse_alignment_sample_summary.tsv`
 
 ## Quick checks
+
+### Fastest full check
+
+```bash
+export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
+eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
+micromamba activate biol550_deseq2
+Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
+bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh check
+```
+
+### One-command check without activation
 
 ```bash
 export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
@@ -37,6 +71,17 @@ bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_ser
 ```
 
 ## Run the shared DESeq2 workflow
+
+### Preferred: activate first, then run
+
+```bash
+export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
+eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
+micromamba activate biol550_deseq2
+bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
+```
+
+### One-command run without activation
 
 ```bash
 bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
