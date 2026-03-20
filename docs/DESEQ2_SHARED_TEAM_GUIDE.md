@@ -23,9 +23,11 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 
 ## Export section
 
-Run this command exactly after logging into `sequoia`:
+Run this exactly after logging into `sequoia`:
 
 ```bash
+export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
+eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
 source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 ```
 
