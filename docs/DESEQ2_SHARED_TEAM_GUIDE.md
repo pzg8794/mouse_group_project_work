@@ -1,7 +1,25 @@
 # DESeq2 shared team guide
 
-This uses the shared team DESeq2 environment on `sequoia`.
-Source the activation script first so the shell uses the correct `R` and `DESeq2`, then run the shared workflow.
+This is the short operational guide for running the mouse DESeq2 workflow on `sequoia`.
+
+## What this is for
+
+- differential expression analysis of the mouse count matrix
+- uses `DESeq2` in a private team environment
+- uses the existing count and metadata handoff from the alignment stage
+
+## Important paths
+
+- team DESeq2 environment:
+  - `/home/pzg8794/.local/share/micromamba/envs/biol550_deseq2`
+- shared activation script:
+  - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh`
+- shared input directory:
+  - `/home/zebrafish/mouse/PRJNA1017789_parallel/deseq2_shared/inputs/`
+- shared output directory:
+  - `/home/zebrafish/mouse/PRJNA1017789_parallel/deseq2_shared/output/`
+- shared wrapper:
+  - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh`
 
 ## Export section
 
@@ -11,8 +29,26 @@ Run this exactly after logging into `sequoia`:
 source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 ```
 
+## Inputs expected
+
+- `mouse_star_gene_counts_reverse_stranded.tsv`
+- `mouse_alignment_sample_summary.tsv`
+
 ## Run section
 
 ```bash
+source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
 ```
+
+## What not to change
+
+- do not replace the input files with a different count matrix unless the team agrees first
+- do not treat the shared wrapper as the canonical analysis code
+- do not casually change package versions inside the team environment
+
+## Re-run rule
+
+- the wrapper can stay on the server
+- the long DESeq2 driver stays local as the source of truth and is copied to the server only when needed
+- if the driver is removed after a run, copy it again before the next run
