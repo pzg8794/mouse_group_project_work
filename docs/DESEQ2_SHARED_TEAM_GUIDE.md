@@ -12,6 +12,8 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 
 - team DESeq2 environment:
   - `/home/pzg8794/.local/share/micromamba/envs/biol550_deseq2`
+- shared activation script:
+  - `/home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh`
 - shared input directory:
   - `/home/zebrafish/mouse/PRJNA1017789_parallel/deseq2_shared/inputs/`
 - shared output directory:
@@ -21,12 +23,10 @@ This is the short operational guide for running the mouse DESeq2 workflow on `se
 
 ## Activate the environment
 
-Run these commands exactly after logging into `sequoia`:
+Run this command exactly after logging into `sequoia`:
 
 ```bash
-export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
-eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
-micromamba activate biol550_deseq2
+source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 ```
 
 If activation worked, this should print the R version without an error:
@@ -46,19 +46,7 @@ Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
 - `mouse_star_gene_counts_reverse_stranded.tsv`
 - `mouse_alignment_sample_summary.tsv`
 
-## Quick checks
-
-### Fastest full check
-
-```bash
-export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
-eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
-micromamba activate biol550_deseq2
-Rscript -e "suppressPackageStartupMessages(library(DESeq2)); cat('DESEQ2_OK\n')"
-bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh check
-```
-
-### One-command check without activation
+## If the activation script fails
 
 ```bash
 export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
@@ -75,9 +63,7 @@ bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_ser
 ### Preferred: activate first, then run
 
 ```bash
-export MAMBA_ROOT_PREFIX=/home/pzg8794/.local/share/micromamba
-eval "$(/home/pzg8794/.local/bin/micromamba shell hook -s bash)"
-micromamba activate biol550_deseq2
+source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
 bash /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_shared_server_run.sh run
 ```
 
