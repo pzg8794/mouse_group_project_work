@@ -37,8 +37,8 @@ NovaSeq 6000  | control: 6 | test: 6
 NovaSeq X     | control: 7 | test: 7
 ```
 
-## Group takeaway
+## Observation
 
-Yes — the current dataset does contain same-machine control/test structure.
+The current dataset contains same-machine control/test structure on both machines in the family-specific breakdown shown above.
 
-That means the project can continue with the family-specific DE strategy already implemented. The invalid part is the direct cross-machine comparison, not the use of the current dataset itself.
+At the machine level, `NovaSeq 6000` shows `6` control and `6` test / CKO samples, while `NovaSeq X` shows `7` control and `7` test / CKO samples across the valid `NovaSeq X` families.
