@@ -2,9 +2,21 @@
 
 This is the simplified team-facing handoff for the current mouse differential expression setup.
 
+## Previous handoff reference
+
+Before using the DE command below, use the shared environment handoff here:
+
+- `docs/DESEQ2_SHARED_TEAM_GUIDE.md`
+
+That guide covers:
+
+- how to activate the shared DESeq2 environment on `sequoia`
+- the shared environment path
+- the basic server run pattern
+
 ## What is shared here
 
-- a dummy walkthrough notebook:
+- a notebook preview of the DE workflow:
   - `notebooks/mouse_differential_expression_team_walkthrough.ipynb`
 - the subset-definition tables:
   - `data/differential_expression_all26/tables/mouse_de_design_table.tsv`
@@ -105,9 +117,17 @@ Description:
 - `vst(dds, blind = FALSE)`
   - creates transformed values for PCA and distance plots
 
+## Environment activation before running the command
+
+Run the shared environment activation first:
+
+```bash
+source /home/zebrafish/mouse/PRJNA1017789_parallel/scripts/mouse_deseq2_activate_shared.sh
+```
+
 ## How to run the pipeline
 
-This wrapper combines the alignment-derived inputs and runs the DESeq2 pipeline with the local R script.
+After the environment is active, this wrapper combines the alignment-derived inputs and runs the DESeq2 pipeline with the local R script.
 
 ```bash
 Rscript pipelines/mouse_deseq2_all26.R \
@@ -133,5 +153,4 @@ This notebook is a simplified walkthrough that shows:
 
 - what inputs feed the DE workflow
 - how the subsets are defined
-- how the DESeq2 pipeline is called
-- where to start if you want to run your own DE analysis
+- what the family-level DE structure looks like
