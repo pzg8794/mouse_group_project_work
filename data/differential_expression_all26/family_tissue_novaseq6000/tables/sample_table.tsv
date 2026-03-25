@@ -1,0 +1,13 @@
+srr	sample_title	geno_class	condition_family	platform_family	gc_status
+SRR30333757	Conditional Knockout DRG, injury, replicate 3	cko	injury	NovaSeq 6000	WARN
+SRR30333758	Conditional Knockout DRG, injury, replicate 2	cko	injury	NovaSeq 6000	WARN
+SRR30333759	Conditional Knockout DRG, injury, replicate 1	cko	injury	NovaSeq 6000	WARN
+SRR30333760	Control DRG, injury, replicate 3	control	injury	NovaSeq 6000	WARN
+SRR30333761	Control DRG, injury, replicate 2	control	injury	NovaSeq 6000	WARN
+SRR30333762	Control DRG, injury, replicate 1	control	injury	NovaSeq 6000	WARN
+SRR30333763	Conditional Knockout DRG, replicate 3	cko	naive	NovaSeq 6000	WARN
+SRR30333764	Conditional Knockout DRG, replicate 2	cko	naive	NovaSeq 6000	WARN
+SRR30333765	Conditional Knockout DRG, replicate 1	cko	naive	NovaSeq 6000	WARN
+SRR30333766	Control DRG, replicate 3	control	naive	NovaSeq 6000	WARN
+SRR30333767	Control DRG, replicate 2	control	naive	NovaSeq 6000	WARN
+SRR30333768	Control DRG, replicate 1	control	naive	NovaSeq 6000	WARN

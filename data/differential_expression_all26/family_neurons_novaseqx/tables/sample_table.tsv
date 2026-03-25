@@ -1,0 +1,7 @@
+srr	sample_title	geno_class	condition_family	platform_family	gc_status
+SRR30333750	Conditional Knockout DRG neurons, replicate 3	cko	neuron_culture	NovaSeq X	PASS
+SRR30333751	Conditional Knockout DRG neurons, replicate 2	cko	neuron_culture	NovaSeq X	PASS
+SRR30333752	Conditional Knockout DRG neurons, replicate 1	cko	neuron_culture	NovaSeq X	PASS
+SRR30333747	Control DRG neurons, replicate 3	control	neuron_culture	NovaSeq X	PASS
+SRR30333748	Control DRG neurons, replicate 2	control	neuron_culture	NovaSeq X	PASS
+SRR30333749	Control DRG neurons, replicate 1	control	neuron_culture	NovaSeq X	PASS

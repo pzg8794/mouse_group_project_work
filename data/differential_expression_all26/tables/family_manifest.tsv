@@ -1,0 +1,4 @@
+family_id	family_label	samples_total	genes_before_filter	genes_after_filter	design
+family_tissue_novaseq6000	Tissue / NovaSeq 6000 / naive vs injury	12	78334	18893	~condition_family + geno_class + condition_family:geno_class
+family_tissue_sham_novaseqx	Tissue / NovaSeq X / ipsilateral vs contralateral sham	8	78334	19498	~condition_family + geno_class + condition_family:geno_class
+family_neurons_novaseqx	Neurons / NovaSeq X / genotype effect	6	78334	18988	~geno_class

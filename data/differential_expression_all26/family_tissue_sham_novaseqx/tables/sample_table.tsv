@@ -1,0 +1,9 @@
+srr	sample_title	geno_class	condition_family	platform_family	gc_status
+SRR30333755	Conditional Knockout DRG, contralateral, replicate 2	cko	contralateral_sham	NovaSeq X	PASS
+SRR30333756	Conditional Knockout DRG, contralateral, replicate 1	cko	contralateral_sham	NovaSeq X	WARN
+SRR30333745	Control DRG, contralateral, replicate 2	control	contralateral_sham	NovaSeq X	PASS
+SRR30333746	Control DRG, contralateral, replicate 1	control	contralateral_sham	NovaSeq X	PASS
+SRR30333753	Conditional Knockout DRG, ipsilateral, replicate 2	cko	ipsilateral_sham	NovaSeq X	PASS
+SRR30333754	Conditional Knockout DRG, ipsilateral, replicate 1	cko	ipsilateral_sham	NovaSeq X	PASS
+SRR30333743	Control DRG, ipsilateral, replicate 2	control	ipsilateral_sham	NovaSeq X	PASS
+SRR30333744	Control DRG, ipsilateral, replicate 1	control	ipsilateral_sham	NovaSeq X	PASS
