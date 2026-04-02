@@ -149,6 +149,8 @@ By the end of Draft 1, the team should have:
 - one short statement explaining what counts as supporting evidence only
 - one short statement explaining what is secondary and should not lead the paper
 - one Results outline in the order the reader should encounter the story
+- one short PCA interpretation that explains the dominant sample structure before gene-level claims
+- one clear rule for narrowing very large significant-gene lists without relying only on an arbitrary top-N cutoff
 
 Write the current one-sentence main claim here:
 
@@ -172,7 +174,10 @@ This is the **project-specific Draft 1 map**. It applies the generic Draft 1 fra
       - journal-style paper      - SRP618841 / mouse_new     - QC improved data   - geno_in_contra
       - DE-centered story        - family_drg_novaseqx       - alignment supports - geno_in_ipsi
       - strong analysis claim    - strongest usable path       DE                 - interaction
-                                 - cleaner paper story       - processing steps
+                                 - cleaner paper story       - PCA interpreted
+                                                              first to confirm
+                                                              side-driven structure
+                                                            - processing steps
                                                               support confidence
                                               |
                                               v
@@ -180,6 +185,14 @@ This is the **project-specific Draft 1 map**. It applies the generic Draft 1 fra
                                - side-specific DRG expression signal
                                - ipsi_vs_contra_in_ff
                                - ipsi_vs_contra_in_cre
+                                              |
+                                              v
+                           [ Large DE list handling for Draft 1 ]
+                           - do not rely only on arbitrary top-100 lists
+                           - use p-value distribution / cumulative bend logic
+                             if a principled cutoff is needed
+                           - reserve GO/pathway analysis as a later interpretive
+                             step after narrowing
                                               |
                                               v
                                    [ Decision: main paper center ]
@@ -214,8 +227,10 @@ By the end of Draft 1, the team should have:
 - the main claim written in 1 sentence
 - `ipsi_vs_contra_in_ff` and `ipsi_vs_contra_in_cre` named as the central results
 - 1 to 2 hero figures selected
+- a short PCA interpretation showing that side-class structure is the first thing to explain
 - a short paragraph explaining why the first mouse path is not the main Results center
 - a short paragraph defining what stays **supporting** vs **secondary**
+- a short note explaining how very large significant-gene lists will be narrowed without using only an arbitrary cutoff
 
 ---
 
