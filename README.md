@@ -10,3 +10,7 @@ Scope:
 - shareable process notes
 - shareable QC/alignment documentation
 - no private working notes or unnecessary internal clutter
+
+Useful shared tool:
+- `scripts/mouse_bendpoint_from_table.py`
+- `docs/BENDPOINT_TOOL_SIMPLE_GUIDE.md`
