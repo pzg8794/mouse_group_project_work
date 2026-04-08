@@ -14,3 +14,4 @@ Scope:
 Useful shared tool:
 - `scripts/mouse_bendpoint_from_table.py`
 - `docs/BENDPOINT_TOOL_SIMPLE_GUIDE.md`
+  - includes the method provenance note and the closest R reference (`LOMAR::find_elbow`) for writeup use

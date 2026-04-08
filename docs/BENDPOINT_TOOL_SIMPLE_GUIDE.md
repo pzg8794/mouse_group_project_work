@@ -2,6 +2,18 @@
 
 This is the shared team tool for taking a differential-expression table, drawing the bend/elbow plot, and creating a new bend-point threshold.
 
+## Method provenance
+
+This standalone Python tool was adapted from the existing local mouse differential-expression workflow and then simplified for team use.
+
+Methodologically, it follows a standard elbow/knee-point heuristic: rank genes by p-value, plot the ordered curve, and choose the point with the maximum distance from the line joining the first and last points.
+
+The closest documented R reference to this idea is:
+- `LOMAR::find_elbow`
+- https://search.r-project.org/CRAN/refmans/LOMAR/html/find_elbow.html
+
+So the method idea is standard/well known, while this script is our project-specific Python implementation of that idea.
+
 ## Tool path
 
 - Script:
