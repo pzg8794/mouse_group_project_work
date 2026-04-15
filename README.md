@@ -12,6 +12,10 @@ Scope:
 - no private working notes or unnecessary internal clutter
 
 Useful shared tool:
+
+Latest shared notebook update:
+- `notebooks/mouse_differential_expression_ff_shinygo_style.ipynb`
+  - FF GO network labels now keep the term text plain while rendering the GO accession in a white rounded box for easier figure review.
 - `scripts/mouse_bendpoint_from_table.py`
 - `docs/BENDPOINT_TOOL_SIMPLE_GUIDE.md`
   - includes the method provenance note and the closest R reference (`LOMAR::find_elbow`) for writeup use
