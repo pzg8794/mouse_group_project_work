@@ -19,3 +19,8 @@ Latest shared notebook update:
 - `scripts/mouse_bendpoint_from_table.py`
 - `docs/BENDPOINT_TOOL_SIMPLE_GUIDE.md`
   - includes the method provenance note and the closest R reference (`LOMAR::find_elbow`) for writeup use
+
+New shared CRE bend-point outputs:
+- `data/differential_expression_all20/derived_analysis/ipsi_vs_contra_in_cre/selected_genes_bendpoint.tsv`
+- `data/differential_expression_all20/derived_analysis/ipsi_vs_contra_in_cre/bendpoint_summary.tsv`
+  - provides the shared 870-gene CRE follow-up set and its bend-point summary for team figure work.
