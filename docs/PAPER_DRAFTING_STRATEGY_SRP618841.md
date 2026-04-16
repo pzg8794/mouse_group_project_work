@@ -243,3 +243,11 @@ Use this shared version when:
 - checking whether a result is central, supporting, or secondary
 
 Keep the later-draft expansion and more detailed local strategy documents in the local paper workspace.
+
+## Review tracking
+
+Active review notes and comment targets are recorded in:
+
+- [../../group_project/mouse_new/paper/HTSA_Review_Feedback_Log.md](../../group_project/mouse_new/paper/HTSA_Review_Feedback_Log.md)
+
+Use that log to keep the exact highlight spans, comments to leave, and revision candidates together for the current review pass.
